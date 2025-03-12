@@ -1,2 +1,2 @@
-# MTVSTS1stProject
+# MTVS1stProject
 SSAMB@NG
