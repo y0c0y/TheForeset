@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
-            SceneManager.LoadScene("SampleScene");//씬 재시작
+            // SceneManager.LoadScene("SampleScene");//씬 재시작
         }
     }
 }
