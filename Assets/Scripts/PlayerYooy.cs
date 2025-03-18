@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class PlayerYooy : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 0.1f;
