@@ -58,12 +58,12 @@ public class PlayerYccy : MonoBehaviour
         rigidbody.position += moveSpeed * Time.deltaTime * moveDir;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = new Color(1f, 0.2f, 0.2f, 1f);
-        {
-            Gizmos.DrawSphere(_lastPoint, 0.1f);
-        }
-        Gizmos.color = Color.white;
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.color = new Color(1f, 0.2f, 0.2f, 1f);
+    //     {
+    //         Gizmos.DrawSphere(_lastPoint, 0.1f);
+    //     }
+    //     Gizmos.color = Color.white;
+    // }
 }
