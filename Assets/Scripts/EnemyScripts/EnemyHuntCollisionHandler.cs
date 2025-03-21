@@ -12,11 +12,13 @@ public class EnemyHuntCollisionHandler : MonoBehaviour
         _enemy = GetComponentInParent<IEnemyCollisionHandler>();
     }
     
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.collider.CompareTag("Player"))
+        Debug.Log("Player Hit");
+        if (other.CompareTag("Player"))
         {
-            _enemy?.OnPlayerHit(other.collider);
+            Debug.Log("Player Hit");
+            _enemy?.OnPlayerHit(other);
         }
     }
     

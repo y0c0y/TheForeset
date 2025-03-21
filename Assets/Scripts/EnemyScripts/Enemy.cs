@@ -44,5 +44,10 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         _agent.isStopped = true;
         GameManager.Instance.GameOver();
     }
+
+    // public void OnPlayerHided(Collider player)
+    // {
+    //     _agent.isStopped = false;
+    // }
 }
 
