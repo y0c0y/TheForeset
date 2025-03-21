@@ -7,7 +7,7 @@ public class PlayerYccy : MonoBehaviour
     public float moveSpeed = 0.01f;
 
     public Animator animator;
-    private Rigidbody rigidbody;
+    public Rigidbody rigidbody;
 
     public UnityEngine.Camera cam;
 

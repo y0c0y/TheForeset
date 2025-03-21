@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Debug.Log("Game Over");
         OnGameOverCanvas?.Invoke(true);
     }
 }
