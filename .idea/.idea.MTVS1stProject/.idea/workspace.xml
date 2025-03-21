@@ -4,49 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/onlyCat.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/onlyCat.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/PlayerBody.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/PlayerBody.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/PlayerEye.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/PlayerEye.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/yooyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/yooyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerYccy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerYccy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
     <favorite-branches>
       <branch-storage>
         <map>
           <entry type="LOCAL">
             <value>
               <list>
-                <branch-info repo="$PROJECT_DIR$" source="feat/Monster" />
+                <branch-info repo="$PROJECT_DIR$" source="Feat/Player" />
               </list>
             </value>
           </entry>
@@ -64,11 +35,18 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/y0c0y/MTVS1stProject.git&quot;,
-    &quot;accountId&quot;: &quot;4177e7f1-e1aa-4fb1-b7d6-32540ac0da86&quot;
+    &quot;accountId&quot;: &quot;6055f1db-2fe1-4005-a8d2-5cd081ad8c91&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@a2827f523e21/Runtime/Core/ColliderBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@7921be93db40/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Packages/packages-lock.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -83,7 +61,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/Monster&quot;,
+    &quot;Unity 에디터에 연결.Unity 에디터에 연결.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feat/Player&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -147,9 +127,12 @@
       <updated>1741864227051</updated>
       <workItem from="1741864228866" duration="6302000" />
       <workItem from="1742278837644" duration="658000" />
-      <workItem from="1742280065441" duration="384000" />
-      <workItem from="1742362718994" duration="2154000" />
-      <workItem from="1742365157781" duration="17969000" />
+      <workItem from="1742280065441" duration="1503000" />
+      <workItem from="1742447881375" duration="12223000" />
+      <workItem from="1742474611409" duration="1280000" />
+      <workItem from="1742516161260" duration="2753000" />
+      <workItem from="1742523830775" duration="1754000" />
+      <workItem from="1742534160721" duration="7786000" />
     </task>
     <task id="LOCAL-00001" summary="씬정리">
       <option name="closed" value="true" />
@@ -159,7 +142,55 @@
       <option name="project" value="LOCAL" />
       <updated>1742279042357</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat : Player 추가">
+      <option name="closed" value="true" />
+      <created>1742448030777</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742448030777</updated>
+    </task>
+    <task id="LOCAL-00003" summary="faet. 플레이어 움직임 달리기 시아 구현">
+      <option name="closed" value="true" />
+      <created>1742537589038</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742537589038</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat. 플레이어 이동속도 클래스 분리">
+      <option name="closed" value="true" />
+      <created>1742541333050</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742541333050</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat 플레이어 이동속도 클래스 분리22">
+      <option name="closed" value="true" />
+      <created>1742541673035</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742541673035</updated>
+    </task>
+    <task id="LOCAL-00006" summary="''">
+      <option name="closed" value="true" />
+      <created>1742541689584</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742541689584</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ㅁㅁ">
+      <option name="closed" value="true" />
+      <created>1742541733069</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742541733069</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +209,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Feat/Player" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -187,6 +230,12 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="씬정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="씬정리" />
+    <MESSAGE value="feat : Player 추가" />
+    <MESSAGE value="faet. 플레이어 움직임 달리기 시아 구현" />
+    <MESSAGE value="feat. 플레이어 이동속도 클래스 분리" />
+    <MESSAGE value="feat 플레이어 이동속도 클래스 분리22" />
+    <MESSAGE value="''" />
+    <MESSAGE value="ㅁㅁ" />
+    <option name="LAST_COMMIT_MESSAGE" value="ㅁㅁ" />
   </component>
 </project>
