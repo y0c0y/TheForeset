@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f4ab6fb4f745f4c895450e28fe9e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  originSpeed: 4
   mouseSensitivity: 150
   cam: {fileID: 1058863511}
 --- !u!143 &2483049
