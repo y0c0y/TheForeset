@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="faet. 플레이어 움직임 달리기 시아 구현">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MoveMode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MoveMode.cs.meta" afterDir="false" />
+    <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="''">
       <change afterPath="$PROJECT_DIR$/Assets/onlyCat.fbx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/onlyCat.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/seoyoung.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/seoyoung.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +43,9 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/MTVS1stProject/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/MTVS1stProject/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@7921be93db40/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/MTVS1stProject/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
@@ -139,7 +137,7 @@
       <workItem from="1742474611409" duration="1280000" />
       <workItem from="1742516161260" duration="2753000" />
       <workItem from="1742523830775" duration="1754000" />
-      <workItem from="1742534160721" duration="6950000" />
+      <workItem from="1742534160721" duration="7494000" />
     </task>
     <task id="LOCAL-00001" summary="씬정리">
       <option name="closed" value="true" />
@@ -165,7 +163,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742537589038</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat. 플레이어 이동속도 클래스 분리">
+      <option name="closed" value="true" />
+      <created>1742541333050</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742541333050</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat 플레이어 이동속도 클래스 분리22">
+      <option name="closed" value="true" />
+      <created>1742541673035</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742541673035</updated>
+    </task>
+    <task id="LOCAL-00006" summary="''">
+      <option name="closed" value="true" />
+      <created>1742541689584</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742541689584</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +229,9 @@
     <MESSAGE value="씬정리" />
     <MESSAGE value="feat : Player 추가" />
     <MESSAGE value="faet. 플레이어 움직임 달리기 시아 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="faet. 플레이어 움직임 달리기 시아 구현" />
+    <MESSAGE value="feat. 플레이어 이동속도 클래스 분리" />
+    <MESSAGE value="feat 플레이어 이동속도 클래스 분리22" />
+    <MESSAGE value="''" />
+    <option name="LAST_COMMIT_MESSAGE" value="''" />
   </component>
 </project>
