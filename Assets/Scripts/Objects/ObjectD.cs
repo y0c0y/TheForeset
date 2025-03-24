@@ -19,8 +19,12 @@ public class ObjectD : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
             
+            Destroy(gameObject);
+
+            playerControler.isState = Enum.SpiderWeb;
+
+
             //Action?? => moveSpeed -50%?
         }
     }
