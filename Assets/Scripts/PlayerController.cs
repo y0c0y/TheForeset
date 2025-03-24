@@ -68,7 +68,7 @@ public partial class PlayerController : MonoBehaviour
         cam.localRotation = Quaternion.Euler(_rotateX, 0f, 0f);
         
         //카메라 회전 제한 (90)
-        _rotateX = Mathf.Clamp(_rotateX, -90f, 90f);
+        _rotateX = Mathf.Clamp(_rotateX, -40f, 20f);
 
         // 아무 방향키도 입력받지 않으면 이동하지 않고 종료
         //Mathf.Approximately가 근사치를 뽑아 비교해주는? 메소드이고 =! 를 쓰면 값이 뒤집혀 들어간다
