@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
+
 public partial class PlayerController : MonoBehaviour
 {
     //원래 속도 값
@@ -22,8 +23,11 @@ public partial class PlayerController : MonoBehaviour
 
     //리지드바디 대신 캐릭터컨트롤러로 움직일 예정
     private CharacterController _controller;
-    
 
+    public BobbingHead bobbingHead;
+    
+    
+    
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
@@ -37,16 +41,12 @@ public partial class PlayerController : MonoBehaviour
         //이동속도 초기화
         moveSpeed = originSpeed;
     }
-
+    
+    
+    
+    
     void Update()
     {
-        
-        //오브젝트 콜라이더 안에 들어가면 f키를 눌러서 상호작용 가능하게 설정
-        // if ()
-        // {
-        //     bool F = Input.GetKey(KeyCode.F);
-        // }
-
         //키보드 방향키 입력정보를 가져옴
         var v = Input.GetAxisRaw("Vertical");
         var h = Input.GetAxisRaw("Horizontal");
@@ -67,36 +67,39 @@ public partial class PlayerController : MonoBehaviour
         //카메라 회전 x축 기준
         cam.localRotation = Quaternion.Euler(_rotateX, 0f, 0f);
         
-        //카메라 회전 제한 (90)
+        //카메라 회전 제한
         _rotateX = Mathf.Clamp(_rotateX, -40f, 20f);
 
         // 아무 방향키도 입력받지 않으면 이동하지 않고 종료
         //Mathf.Approximately가 근사치를 뽑아 비교해주는? 메소드이고 =! 를 쓰면 값이 뒤집혀 들어간다
         bool isidle = (Mathf.Approximately(h, 0f) && Mathf.Approximately(v, 0f));
         if (isidle)
+        {
+            bobbingHead.ChangeMode(MoveMode.Idle);
             return;
+        }
         
-        
-        
-        
-        
-        //시프트 키가 입력될때 트루를 반환하는 코드 작성중
+        //시프트 키가 입력될때 트루를 반환하는 코드 작성
         bool isRunning = (Input.GetKey(KeyCode.LeftShift));
         
         //달릴때 필요한 키 입력받고 출력하는 이프문 (안에 값 변경 필요)
         if (isRunning)
         {
             moveSpeed = originSpeed * SpeedMode.ChangeSpeed(MoveMode.Running);
+            bobbingHead.ChangeMode(MoveMode.Running);
+            bobbingHead.bobbingAmount = bobbingHead.bobbingAmountRun;
         }
         else
         {
             moveSpeed = originSpeed * SpeedMode.ChangeSpeed(MoveMode.Move);
+            bobbingHead.ChangeMode(MoveMode.Move);
+            bobbingHead.bobbingAmount = bobbingHead.bobbingAmountNormal;
         }
         
         //플레이어가 로컬축 기준으로 이동
         var movedir = new Vector3(h, 0, v).normalized;
         _controller.Move(transform.rotation * (moveSpeed * Time.deltaTime * movedir));
-        
+
     }
 }
 
