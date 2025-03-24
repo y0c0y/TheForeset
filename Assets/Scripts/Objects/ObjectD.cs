@@ -22,7 +22,7 @@ public class ObjectD : MonoBehaviour
             
             Destroy(gameObject);
 
-            playerControler.isState = Enum.SpiderWeb;
+            //playerControler.isState = Enum.SpiderWeb;
 
 
             //Action?? => moveSpeed -50%?
