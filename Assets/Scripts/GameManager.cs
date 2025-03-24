@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { private set; get; }
     
     public event Action<bool> OnGameOverCanvas;
+    
+    public UIManager uiManager;
 
     void Awake()
     {
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        uiManager.OnGameOverCanvas();
         OnGameOverCanvas?.Invoke(false);
     }
 
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Debug.Log("Game Over");
         OnGameOverCanvas?.Invoke(true);
     }
 }

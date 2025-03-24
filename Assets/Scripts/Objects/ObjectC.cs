@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class ObjectC : MonoBehaviour
 {
-    public Transform targetTransform;
-    public Vector3 cameraOffset;
-    
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,7 +11,6 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = targetTransform.position + cameraOffset;
         
     }
 }
