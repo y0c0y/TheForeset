@@ -4,7 +4,6 @@ using UnityEngine;
 
 public partial class PlayerController : MonoBehaviour
 {
-
     //원래 속도 값
     public float originSpeed = 2.0f;
 
@@ -23,6 +22,7 @@ public partial class PlayerController : MonoBehaviour
 
     //리지드바디 대신 캐릭터컨트롤러로 움직일 예정
     private CharacterController _controller;
+    
 
     private void Awake()
     {
@@ -40,6 +40,12 @@ public partial class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
+        //오브젝트 콜라이더 안에 들어가면 f키를 눌러서 상호작용 가능하게 설정
+        // if ()
+        // {
+        //     bool F = Input.GetKey(KeyCode.F);
+        // }
 
         //키보드 방향키 입력정보를 가져옴
         var v = Input.GetAxisRaw("Vertical");
@@ -69,6 +75,10 @@ public partial class PlayerController : MonoBehaviour
         bool isidle = (Mathf.Approximately(h, 0f) && Mathf.Approximately(v, 0f));
         if (isidle)
             return;
+        
+        
+        
+        
         
         //시프트 키가 입력될때 트루를 반환하는 코드 작성중
         bool isRunning = (Input.GetKey(KeyCode.LeftShift));
