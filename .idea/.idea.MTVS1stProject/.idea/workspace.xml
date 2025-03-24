@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="" />
+    <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/seoyoung.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/seoyoung.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoveMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MoveMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpeedMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpeedMode.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,14 +46,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/MTVS1stProject/Assets/Scenes/seoyoung.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/MTVS1stProject/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/MTVS1stProject/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@7921be93db40/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/MTVS1stProject/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/MTVS1stProject/Packages/packages-lock.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5780850fc704417799e38550144b43932ac00/fc/0951a216/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -133,6 +135,12 @@
       <workItem from="1742516161260" duration="2753000" />
       <workItem from="1742523830775" duration="1754000" />
       <workItem from="1742534160721" duration="7786000" />
+      <workItem from="1742542329059" duration="533000" />
+      <workItem from="1742542917916" duration="21000" />
+      <workItem from="1742548359224" duration="2563000" />
+      <workItem from="1742555398288" duration="17000" />
+      <workItem from="1742555422478" duration="2091000" />
+      <workItem from="1742557964454" duration="2049000" />
     </task>
     <task id="LOCAL-00001" summary="씬정리">
       <option name="closed" value="true" />
@@ -209,19 +217,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Feat/Player" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
