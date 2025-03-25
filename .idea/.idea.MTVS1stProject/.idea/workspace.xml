@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Object/Object D.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/yooyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/yooyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectD.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMoving/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMoving/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Spiders/Materials/BlackWidow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Spiders/Materials/BlackWidow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Spiders/Materials/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Spiders/Materials/Ground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Spiders/Materials/SandSpider.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Spiders/Materials/SandSpider.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
