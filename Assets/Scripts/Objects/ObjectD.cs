@@ -20,6 +20,8 @@ public class ObjectD : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             
+            
+            
             Destroy(gameObject);
 
             //playerControler.isState = Enum.SpiderWeb;
