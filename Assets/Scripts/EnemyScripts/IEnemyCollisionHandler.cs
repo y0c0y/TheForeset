@@ -2,12 +2,14 @@ using UnityEngine;
 
 public interface IEnemyCollisionHandler
 {
-    void OnPlayerHit(Collider other);
+    void OnPlayerHit();
     // void OnPlayerHide(Collider other);
     
     void OnPlayerDetected(Collider other);
     
-    void OnPlayerLost(Collider other);
+    void OnPlayerLost();
+    
+    // void OnAnimatorIsWalking(bool value);
     
 }
 
