@@ -59,8 +59,14 @@ public class PlayerController : MonoBehaviour
         if (isStunning)
         {
             moveMode = MoveMode.Slow;
-            yield return new WaitForSeconds(3.0f);
+
+            // for (int i = 0; i < 3; i++)
+            // {
+            //     // Debug.Log(i);
+            //     yield return new WaitForSeconds(0.5f);
+            // }
             
+            yield return new WaitForSeconds(1.5f);
             
         }
         else
@@ -72,6 +78,7 @@ public class PlayerController : MonoBehaviour
         }
         
         isChangingMoveMode = false;
+        isStunning = false;
         Debug.Log(moveMode);
     }
     
