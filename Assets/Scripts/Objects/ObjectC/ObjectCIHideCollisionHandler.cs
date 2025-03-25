@@ -11,13 +11,12 @@ public class ObjectCHideHandler : MonoBehaviour
         _objectC = GetComponentInParent<IObjectCColliderHandler>();
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player Hide");
-            _objectC?.OnPlayerHide(other);
-           
+            
+            _objectC?.OnPlayerHide();
         }
     }
     

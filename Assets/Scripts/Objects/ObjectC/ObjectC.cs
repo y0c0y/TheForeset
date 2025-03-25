@@ -1,56 +1,40 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-    public class ObjectC : MonoBehaviour, IObjectCColliderHandler
+public class ObjectC : MonoBehaviour, IObjectCColliderHandler
     {
         public GameObject barricade;
         public GameObject leafBarricade;
+        public GameObject bush;
+        public GameObject enemy;
         
-        
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        
-        
-        
-        void Start()
-        {
-           // barricade = GetComponent<GameObject>();
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-    
-        private void OnTriggerStay(Collider other)
-        {
-     
-        }
-
         public void OnPlayerInteraction(Collider other)
         {
-            if (Input.GetKey(KeyCode.F))
+            leafBarricade.SetActive(true);
+            bush.SetActive(false);
+            if (enemy)
             {
-                Debug.Log("Player interaction");
-                leafBarricade .SetActive(true);
-                barricade.SetActive(false);
+                enemy.GetComponent<Enemy>().Instance.IsChasing = false;
             }
         }
 
         public void OnPlayerExitInteraction(Collider other)
         {
-            if (Input.GetKey(KeyCode.F))
+            leafBarricade.SetActive(false);
+            bush.SetActive(true);
+            if (enemy)
             {
-                leafBarricade.SetActive(false);
-                barricade.SetActive(true);
+                enemy.GetComponent<Enemy>().Instance.IsChasing = true;
             }
             
         }
 
-        public void OnPlayerHide(Collider other)
+        public void OnPlayerHide()
         {
-            // Debug.Log(barricadeCollider.name);
+            
+
         }
     }
 

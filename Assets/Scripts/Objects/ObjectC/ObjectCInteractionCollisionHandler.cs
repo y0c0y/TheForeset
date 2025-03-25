@@ -11,29 +11,31 @@ public class ObjectCInteractionHandler : MonoBehaviour
     {
         _objectC = GetComponentInParent<IObjectCColliderHandler>();
     }
+
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         _objectC?.OnPlayerHide();
+    //     }
+    // }
     
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        
-        Debug.Log("OnTriggerStay");
         
         if (other.CompareTag("Player"))
         {
             _objectC?.OnPlayerInteraction(other);
-            Debug.Log("Hiding");
+    
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("OnTriggerExit");
-        
         if (other.CompareTag("Player"))
         {
             _objectC?.OnPlayerExitInteraction(other);
-            Debug.Log("HidingExit");
         }
-
         
     }
 
