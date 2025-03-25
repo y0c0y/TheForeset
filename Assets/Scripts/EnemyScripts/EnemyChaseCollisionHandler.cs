@@ -23,7 +23,7 @@ public class EnemyChaseCollisionHandler : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _enemy?.OnPlayerLost(other);
+            _enemy?.OnPlayerLost();
         }
     }
 }

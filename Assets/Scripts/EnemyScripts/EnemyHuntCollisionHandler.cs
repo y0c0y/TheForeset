@@ -18,7 +18,7 @@ public class EnemyHuntCollisionHandler : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player Hit");
-            _enemy?.OnPlayerHit(other);
+            _enemy?.OnPlayerHit();
         }
     }
     
