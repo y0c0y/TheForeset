@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
     {
         IsWalking = false;
         GameManager.Instance.GameOver();
+        IsWalking = true;
     }
 
 
