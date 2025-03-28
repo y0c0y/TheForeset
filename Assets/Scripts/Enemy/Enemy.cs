@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
-public abstract class Enemy : MonoBehaviour, IEnemyCollisionHandler
+public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 {
     public Enemy Instance {get; private set;}
     
@@ -14,7 +14,7 @@ public abstract class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     public bool IsWalking { get; private set; }
 
-    public bool IsChasing { get; set; }
+    private bool _isChasing;
     
     private Vector3 _destination;
     
@@ -38,7 +38,7 @@ public abstract class Enemy : MonoBehaviour, IEnemyCollisionHandler
         _agent = GetComponent<NavMeshAgent>();
         
         IsWalking = true;
-        IsChasing = false;
+        _isChasing = false;
     }
 
     private void Start()
@@ -49,8 +49,8 @@ public abstract class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private void Update()
     {
-        Debug.Log(IsChasing);
-        if (!IsChasing)
+        Debug.Log(_isChasing);
+        if (!_isChasing)
         {
             
             Debug.Log("Lost");
@@ -102,13 +102,14 @@ public abstract class Enemy : MonoBehaviour, IEnemyCollisionHandler
     
     public void OnIsChasing(bool tmp)
     {
-        IsChasing = tmp;
+        _isChasing = tmp;
+        Debug.Log(_isChasing);
     }
 
 
     public void OnPlayerDetected(Collider other)
     {
-        if (IsChasing)
+        if (_isChasing)
         {
             _targetPosition = other.transform.position;
             Debug.Log("Chasing");
