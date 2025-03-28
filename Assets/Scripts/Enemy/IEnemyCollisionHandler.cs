@@ -3,7 +3,7 @@ using UnityEngine;
 public interface IEnemyCollisionHandler
 {
     void OnPlayerHit();
-    // void OnPlayerHide(Collider other);
+    void OnIsChasing(bool tmp);
     
     void OnPlayerDetected(Collider other);
     
