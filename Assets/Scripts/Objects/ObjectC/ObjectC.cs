@@ -10,6 +10,8 @@ public class ObjectC : MonoBehaviour, IObjectCColliderHandler
         public GameObject bush;
         public GameObject enemy;
         
+        
+        
         public void OnPlayerInteraction(Collider other)
         {
             leafBarricade.SetActive(true);
