@@ -220,8 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedVersion: 0
-  m_Size: {x: 2.7374034, y: 2.8806324, z: 4.823574}
-  m_Center: {x: 0, y: 1.1372008, z: 0}
+  m_Size: {x: 3.1136005, y: 2.9925246, z: 5.338971}
+  m_Center: {x: -0.18809855, y: 1.193147, z: -0.25769854}
   m_Area: 1
   m_AffectedAgents: ffffffff
 --- !u!114 &7257055941762619867
