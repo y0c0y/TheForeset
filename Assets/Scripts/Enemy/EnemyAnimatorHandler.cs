@@ -23,7 +23,10 @@ public class EnemyAnimatorHandler : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBool(_hashIsWalking, _parent.IsWalking);
+        var isWalking = _parent.IsWalking;
+        
+        
+        _animator.SetBool(_hashIsWalking, isWalking);
     }
     
 }
