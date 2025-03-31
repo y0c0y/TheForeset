@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         _agent = GetComponent<NavMeshAgent>();
         
         IsWalking = true;
-        IsChasing = false;
+        IsChasing = true;
     }
 
     private void Start()
@@ -49,42 +49,30 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private void Update()
     {
-        Debug.Log(IsChasing);
+        // Debug.Log(IsChasing);
         if (!IsChasing)
         {
-            
-            Debug.Log("Lost");
+            // Debug.Log("Lost");
             if (_agent.remainingDistance <= _agent.stoppingDistance)
             {
-                
-                Vector3 playerPos = player.transform.position;
-                
                 CheckPosition();
-
             }
         }
-
-
+        
         _agent.SetDestination(_targetPosition);
         
-        Vector3 targetDirection = (_agent.steeringTarget - transform.position).normalized;
-    
-        if (targetDirection.sqrMagnitude > 0.01f) // 너무 가까운 경우 회전 방지
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-        }
+        var targetDirection = (_agent.steeringTarget - transform.position).normalized;
+
+        if (!(targetDirection.sqrMagnitude > 0.01f)) return; // 너무 가까운 경우 회전 방지
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
     }
 
     private void CheckPosition()
     {
-        // Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
         if (_agent.pathPending) return;
-        
         if (_agent.hasPath && _agent.velocity.sqrMagnitude != 0f) return;
-
-        Debug.Log("목적지에 도착했습니다.");
-
+        
         _staticPoint = ChangeStaticPoint();
        _targetPosition = _staticPoint;
     }
@@ -108,7 +96,6 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         if (IsChasing)
         {
             _targetPosition = other.transform.position;
-            Debug.Log("Chasing");
         }
         else
         {
