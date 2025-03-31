@@ -5,32 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96439e76-c711-40fd-a7f8-e5e2fbbb54e7" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyAnimatorHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyAnimatorHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/OnLeafBarricade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/OnLeafBarricade.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MTVS1stProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animators/Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animators/Enemy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/LeafBarricade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Object/LeafBarricade.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object C.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Object/Object C.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/fence02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/fence02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ydfsfsddScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ydfsfsddScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Asset/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Asset/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Object/Object D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Object/Object D.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Main Baking Set.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Main Baking Set.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/seoyoung/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/seoyoung/Global Volume Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/yooyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/yooyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/yooyScene/NavMesh-Ground.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/yooyScene/NavMesh-Ground.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyChaseCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyChaseCollisionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyHuntCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyHuntCollisionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/IEnemyCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/IEnemyCollisionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/IObjectCColliderHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/IObjectCColliderHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/ObjectC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/ObjectC.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/ObjectCIHideCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/ObjectCIHideCollisionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/ObjectCInteractionCollisionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC/ObjectCInteractionCollisionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyAnimatorHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemyAnimatorHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +48,12 @@
     &quot;assignee&quot;: &quot;y0c0y&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/y0c0y/MTVS1stProject.git",
-    "accountId": "4177e7f1-e1aa-4fb1-b7d6-32540ac0da86"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/y0c0y/MTVS1stProject.git&quot;,
+    &quot;accountId&quot;: &quot;4177e7f1-e1aa-4fb1-b7d6-32540ac0da86&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyScripts/IEnemyCollisionHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Objects/ObjectC.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,6 +100,14 @@
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\GitProjects\MTVS1stProject -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\GitProjects\MTVS1stProject" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="독립실행형 플레이어" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Build\MTVS1stProject.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\GitProjects\Build" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -176,7 +173,9 @@
       <workItem from="1742555398288" duration="17000" />
       <workItem from="1742555422478" duration="2091000" />
       <workItem from="1742557964454" duration="2049000" />
-      <workItem from="1742845029995" duration="12193000" />
+      <workItem from="1742845029995" duration="16042000" />
+      <workItem from="1742945967756" duration="2718000" />
+      <workItem from="1742956222401" duration="8989000" />
     </task>
     <task id="LOCAL-00001" summary="씬정리">
       <option name="closed" value="true" />

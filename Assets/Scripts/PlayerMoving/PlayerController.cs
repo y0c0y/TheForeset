@@ -1,10 +1,17 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 
 
-public partial class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    public PlayerController Instance { get; private set; }
+    
+    public MoveMode moveMode;
+    public bool isStunning;
+    private bool isChangingMoveMode = false; // 코루틴 실행 여부 체크
+    
     //원래 속도 값
     public float originSpeed = 2.0f;
 
@@ -26,10 +33,10 @@ public partial class PlayerController : MonoBehaviour
 
     public BobbingHead bobbingHead;
     
-    
-    
     private void Awake()
     {
+
+        Instance = this;
         _controller = GetComponent<CharacterController>();
     }
     
@@ -41,8 +48,39 @@ public partial class PlayerController : MonoBehaviour
         //이동속도 초기화
         moveSpeed = originSpeed;
     }
-    
-    
+
+    private IEnumerator ChangeMoveMode()
+    {   
+        if (isChangingMoveMode) yield break; // 이미 실행 중이면 중복 실행 방지
+
+        isChangingMoveMode = true; // 실행 시작 표시
+   
+        
+        if (isStunning)
+        {
+            moveMode = MoveMode.Slow;
+
+            // for (int i = 0; i < 3; i++)
+            // {
+            //     // Debug.Log(i);
+            //     yield return new WaitForSeconds(0.5f);
+            // }
+            
+            yield return new WaitForSeconds(1.5f);
+            
+        }
+        else
+        {
+            //시프트 키가 입력될때 트루를 반환하는 코드 작성
+            //달릴때 필요한 키 입력받고 출력하는 이프문 (안에 값 변경 필요)
+            bool isRunning = (Input.GetKey(KeyCode.LeftShift));
+            moveMode = (isRunning ? MoveMode.Running : MoveMode.Move);
+        }
+        
+        isChangingMoveMode = false;
+        isStunning = false;
+        Debug.Log(moveMode);
+    }
     
     
     void Update()
@@ -79,22 +117,14 @@ public partial class PlayerController : MonoBehaviour
             return;
         }
         
-        //시프트 키가 입력될때 트루를 반환하는 코드 작성
-        bool isRunning = (Input.GetKey(KeyCode.LeftShift));
+        if (!isChangingMoveMode) // 코루틴이 실행 중이 아닐 때만 실행
+        {
+            StartCoroutine(ChangeMoveMode());
+        }
         
-        //달릴때 필요한 키 입력받고 출력하는 이프문 (안에 값 변경 필요)
-        if (isRunning)
-        {
-            moveSpeed = originSpeed * SpeedMode.ChangeSpeed(MoveMode.Running);
-            bobbingHead.ChangeMode(MoveMode.Running);
-            bobbingHead.bobbingAmount = bobbingHead.bobbingAmountRun;
-        }
-        else
-        {
-            moveSpeed = originSpeed * SpeedMode.ChangeSpeed(MoveMode.Move);
-            bobbingHead.ChangeMode(MoveMode.Move);
-            bobbingHead.bobbingAmount = bobbingHead.bobbingAmountNormal;
-        }
+        moveSpeed = originSpeed * SpeedMode.ChangeSpeed(moveMode);
+        bobbingHead.ChangeMode(moveMode);
+        bobbingHead.bobbingAmount = bobbingHead.bobbingAmountRun;
         
         //플레이어가 로컬축 기준으로 이동
         var movedir = new Vector3(h, 0, v).normalized;
