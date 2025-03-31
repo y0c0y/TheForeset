@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     public bool IsWalking { get; private set; }
 
-    private bool _isChasing;
+    public bool IsChasing {get; private set;}
     
     private Vector3 _destination;
     
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         _agent = GetComponent<NavMeshAgent>();
         
         IsWalking = true;
-        _isChasing = false;
+        IsChasing = false;
     }
 
     private void Start()
@@ -49,8 +49,8 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private void Update()
     {
-        Debug.Log(_isChasing);
-        if (!_isChasing)
+        Debug.Log(IsChasing);
+        if (!IsChasing)
         {
             
             Debug.Log("Lost");
@@ -98,14 +98,14 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
     
     public void OnIsChasing(bool tmp)
     {
-        _isChasing = tmp;
-        Debug.Log(_isChasing);
+        IsChasing = tmp;
+        Debug.Log(IsChasing);
     }
 
 
     public void OnPlayerDetected(Collider other)
     {
-        if (_isChasing)
+        if (IsChasing)
         {
             _targetPosition = other.transform.position;
             Debug.Log("Chasing");
