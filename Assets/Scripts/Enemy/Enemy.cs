@@ -91,13 +91,9 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private Vector3 ChangeStaticPoint()
     {
-        // if(player == null) return Vector3.zero;
-        Vector3 playerPos = player.transform.position;
-        
-        var point = new Vector3(Mathf.Sign(playerPos.x),0,Mathf.Sign(playerPos.z));
-        point *= distance;
-        Debug.Log(point);
-        return point;
+        Vector2 randomCircle = Random.insideUnitCircle * distance;
+        Vector3 newTarget = player.transform.position + new Vector3(randomCircle.x, 0, randomCircle.y);
+        return newTarget;
     }
     
     public void OnIsChasing(bool tmp)

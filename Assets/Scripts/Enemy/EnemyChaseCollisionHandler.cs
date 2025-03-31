@@ -19,7 +19,7 @@ public class EnemyChaseCollisionHandler : MonoBehaviour
         {
             Debug.Log("Player detected");
             _enemy?.OnPlayerDetected(other);
-            _enemy?.OnIsChasing(true);
+            // _enemy?.OnIsChasing(true);
           
         }
     }
@@ -29,7 +29,7 @@ public class EnemyChaseCollisionHandler : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _enemy?.OnPlayerLost();
-            _enemy?.OnIsChasing(false);
+            // _enemy?.OnIsChasing(false);
         }
     }
 }
