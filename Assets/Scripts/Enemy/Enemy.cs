@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     public bool IsWalking { get; private set; }
 
-    private bool _isChasing;
+    public bool IsChasing {get; private set;}
     
     private Vector3 _destination;
     
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         _agent = GetComponent<NavMeshAgent>();
         
         IsWalking = true;
-        _isChasing = false;
+        IsChasing = false;
     }
 
     private void Start()
@@ -49,8 +49,8 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private void Update()
     {
-        Debug.Log(_isChasing);
-        if (!_isChasing)
+        Debug.Log(IsChasing);
+        if (!IsChasing)
         {
             
             Debug.Log("Lost");
@@ -91,25 +91,21 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private Vector3 ChangeStaticPoint()
     {
-        // if(player == null) return Vector3.zero;
-        Vector3 playerPos = player.transform.position;
-        
-        var point = new Vector3(Mathf.Sign(playerPos.x),0,Mathf.Sign(playerPos.z));
-        point *= distance;
-        Debug.Log(point);
-        return point;
+        Vector2 randomCircle = Random.insideUnitCircle * distance;
+        Vector3 newTarget = player.transform.position + new Vector3(randomCircle.x, 0, randomCircle.y);
+        return newTarget;
     }
     
     public void OnIsChasing(bool tmp)
     {
-        _isChasing = tmp;
-        Debug.Log(_isChasing);
+        IsChasing = tmp;
+        Debug.Log(IsChasing);
     }
 
 
     public void OnPlayerDetected(Collider other)
     {
-        if (_isChasing)
+        if (IsChasing)
         {
             _targetPosition = other.transform.position;
             Debug.Log("Chasing");
