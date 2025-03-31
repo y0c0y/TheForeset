@@ -5,16 +5,19 @@ using UnityEngine.AI;
 public class EnemyHuntCollisionHandler : MonoBehaviour
 {
     private IEnemyCollisionHandler _enemy;
+    private Enemy _parent;
     
 
     private void Awake()
     {
         _enemy = GetComponentInParent<IEnemyCollisionHandler>();
+        _parent = GetComponentInParent<Enemy>();
     }
     
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Player Hit");
+        if(!_parent.Instance.IsChasing) return;
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player Hit");
