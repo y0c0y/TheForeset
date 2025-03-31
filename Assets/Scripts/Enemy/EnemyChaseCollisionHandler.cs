@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyChaseCollisionHandler : MonoBehaviour
 {
     private IEnemyCollisionHandler _enemy;
-    private GameObject _parent;
+    
     
 
     private void Start()
