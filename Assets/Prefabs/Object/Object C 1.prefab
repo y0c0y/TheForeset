@@ -237,9 +237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barricade: {fileID: 5656362500684899373}
-  leafBarricade: {fileID: 2818824689251927337, guid: 140fb8f1a74a7a34fa9f743f72140026, type: 3}
+  leafBarricade: {fileID: 0}
   bush: {fileID: 6737609464417937502}
-  enemy: {fileID: 200570840577973073, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
+  enemy: {fileID: 0}
 --- !u!1 &5656362500684899373
 GameObject:
   m_ObjectHideFlags: 0
