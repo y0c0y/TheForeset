@@ -10,13 +10,16 @@ public class ObjectC : MonoBehaviour, IObjectCColliderHandler
         public GameObject bush;
         public GameObject enemy;
         
+        
+        
         public void OnPlayerInteraction(Collider other)
         {
             leafBarricade.SetActive(true);
             bush.SetActive(false);
             if (enemy)
             {
-                enemy.GetComponent<Enemy>().Instance.IsChasing = false;
+                Debug.Log("Hide in Bush");
+                enemy.GetComponent<Enemy>().OnIsChasing(false);
             }
         }
 
@@ -26,7 +29,7 @@ public class ObjectC : MonoBehaviour, IObjectCColliderHandler
             bush.SetActive(true);
             if (enemy)
             {
-                enemy.GetComponent<Enemy>().Instance.IsChasing = true;
+                enemy.GetComponent<Enemy>().OnIsChasing(true);
             }
             
         }
