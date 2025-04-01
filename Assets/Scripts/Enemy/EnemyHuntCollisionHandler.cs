@@ -16,12 +16,10 @@ public class EnemyHuntCollisionHandler : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(!_parent.Instance.IsChasing) return;
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player Hit");
-            _enemy?.OnPlayerHit();
-        }
+        if(!Enemy.Instance.IsChasing) return;
+        if (!other.CompareTag("Player")) return;
+        Debug.Log("Player Hit");
+        _enemy?.OnPlayerHit();
     }
     
     
