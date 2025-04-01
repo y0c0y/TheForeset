@@ -15,18 +15,16 @@ public class EnemyChaseCollisionHandler : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player detected");
-            _enemy?.OnPlayerDetected(other);
-            // _enemy?.OnIsChasing(true);
-          
-        }
+        if(!Enemy.Instance.IsChasing) return;
+        if (!other.CompareTag("Player")) return;
+        Debug.Log("Player detected");
+        _enemy?.OnPlayerDetected(other);
+        // _enemy?.OnIsChasing(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
             _enemy?.OnPlayerLost();
             // _enemy?.OnIsChasing(false);
