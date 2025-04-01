@@ -5,32 +5,30 @@ public class ObjectD : MonoBehaviour
 {
     public GameObject player;
     
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private bool _hasPlayed;
+    
+    private void Awake()
     {
-        
+        _hasPlayed = true;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (_hasPlayed) return;
+        audioSource.PlayOneShot(audioClip);
+        _hasPlayed = true;
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (player != null)
-            {
-                player.GetComponent<PlayerController>().Instance.isStunning = true;
-                Debug.Log("Destroyed");
-            }
-            Destroy(gameObject);
-            
-            
-            
-        }
+        if (!other.CompareTag("Player")) return;
+        if (player == null) return;
+        
+        player.GetComponent<PlayerController>().Instance.isStunning = true;
+        _hasPlayed = false;
+        Destroy(gameObject);
     }
 }
