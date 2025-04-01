@@ -6,7 +6,7 @@ public class GGAMBBACK : MonoBehaviour
 
     CanvasGroup canvasGroup;
 
-    public float blinkSpeed = 0f;
+    public float blinkSpeed = 65f;
     private float blinkSum = 0f;
     
     private float radian = 0;
