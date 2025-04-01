@@ -1,105 +1,95 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
-
 
 public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 {
-    public Enemy Instance {get; private set;}
-    
-    private NavMeshAgent _agent;
-
-    public bool IsWalking { get; private set; }
-
-    public bool IsChasing {get; private set;}
-    
-    private Vector3 _destination;
-    
+    public static Enemy Instance { get; private set; }
     
     [SerializeField] private GameObject player;
-    
-    private Vector3 _targetPosition;
-    
-    private Vector3 _staticPoint;
+    [SerializeField] private int distance = 10;
 
-    [SerializeField] private int distance;
+    private NavMeshAgent _agent;
+    private Vector3 _targetPosition;
+    private Vector3 _staticPoint;
     
-    
-    Action<bool> _onPlayerInteraction;
-    
-    
+    public bool IsWalking { get; private set; } = true;
+    public bool IsChasing { get; private set; } = true;
+
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
         
         _agent = GetComponent<NavMeshAgent>();
-        
-        IsWalking = true;
-        IsChasing = true;
     }
 
     private void Start()
     {
-        _targetPosition = ChangeStaticPoint();
+        _targetPosition = GetRandomPatrolPoint();
         _agent.SetDestination(_targetPosition);
     }
 
     private void Update()
     {
-        // Debug.Log(IsChasing);
-        if (!IsChasing)
+        if (!IsChasing && 
+            !_agent.pathPending && 
+            _agent.remainingDistance <= _agent.stoppingDistance && 
+            _agent.velocity.sqrMagnitude == 0f)
         {
-            // Debug.Log("Lost");
-            if (_agent.remainingDistance <= _agent.stoppingDistance)
-            {
-                CheckPosition();
-            }
+            Debug.Log("이게 얼마나 호출되는겨");
+            SetNewPatrolPoint();
         }
         
         _agent.SetDestination(_targetPosition);
-        
-        var targetDirection = (_agent.steeringTarget - transform.position).normalized;
-
-        if (!(targetDirection.sqrMagnitude > 0.01f)) return; // 너무 가까운 경우 회전 방지
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+        RotateTowardsSteeringTarget();
+    }
+    
+    private void SetNewPatrolPoint()
+    {
+        _staticPoint = GetRandomPatrolPoint();
+        _targetPosition = _staticPoint;
+    }
+    
+    private Vector3 GetRandomPatrolPoint()
+    {
+        var randomCircle = Random.insideUnitCircle * distance;
+        return player.transform.position + new Vector3(randomCircle.x, 0, randomCircle.y);
+    }
+    
+    private void RotateTowardsSteeringTarget()
+    {
+        var direction = (_agent.steeringTarget - transform.position).normalized;
+        if (!(direction.sqrMagnitude > 0.01f)) return;
+        var targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
     }
 
-    private void CheckPosition()
+    public void OnIsChasing(bool isChasing)
     {
-        if (_agent.pathPending) return;
-        if (_agent.hasPath && _agent.velocity.sqrMagnitude != 0f) return;
-        
-        _staticPoint = ChangeStaticPoint();
-       _targetPosition = _staticPoint;
+        IsChasing = isChasing;
+        // Debug.Log(IsChasing);
     }
-
-    private Vector3 ChangeStaticPoint()
-    {
-        Vector2 randomCircle = Random.insideUnitCircle * distance;
-        Vector3 newTarget = player.transform.position + new Vector3(randomCircle.x, 0, randomCircle.y);
-        return newTarget;
-    }
-    
-    public void OnIsChasing(bool tmp)
-    {
-        IsChasing = tmp;
-        Debug.Log(IsChasing);
-    }
-
 
     public void OnPlayerDetected(Collider other)
     {
         if (IsChasing)
         {
+            // 플레이어를 추적
             _targetPosition = other.transform.position;
         }
         else
         {
-            CheckPosition();
+            // 순찰 모드로 복귀
+            SetNewPatrolPoint();
             _targetPosition = _staticPoint;
         }
     }
@@ -115,7 +105,4 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         GameManager.Instance.GameOver();
         IsWalking = true;
     }
-
-
 }
-
