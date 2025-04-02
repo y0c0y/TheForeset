@@ -50,7 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b6c589039d02e498d670f82aa2f900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPointIdx: 0
+  voiceClip: {fileID: 8300000, guid: e885a7fbc5af14640ac556756c834499, type: 3}
+  crunchClip: {fileID: 8300000, guid: 8e56a6f0b90c6d14399eaa5945186aae, type: 3}
+  player: {fileID: 0}
+  distance: 0
 --- !u!195 &1199390813374806785
 NavMeshAgent:
   m_ObjectHideFlags: 0

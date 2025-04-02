@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     
     public UIManager uiManager;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -17,22 +17,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         //uiManager.OnGameOverCanvas();
         OnGameOverCanvas?.Invoke(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
         Time.timeScale = 0f;
         OnGameOverCanvas?.Invoke(true);
     }

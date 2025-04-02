@@ -1,20 +1,19 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-
-
 
 public class PlayerController : MonoBehaviour
 {
-    public PlayerController Instance { get; private set; }
+    public static PlayerController Instance { get; private set; }
+    
+    public bool isStunning;
+    public bool isDead;
+    
+    private bool _isChangingMoveMode; // 코루틴 실행 여부 체크
     
     public MoveMode moveMode;
-    public bool isStunning;
-    private bool isChangingMoveMode = false; // 코루틴 실행 여부 체크
-    
+
     //원래 속도 값
     public float originSpeed = 2.0f;
-
     //속도를 바꿀 그릇
     private float moveSpeed;
 
@@ -36,38 +35,44 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
 
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        
         _controller = GetComponent<CharacterController>();
+        
+        isStunning = false;
+        isDead = false;
+        
+        _isChangingMoveMode = false;
     }
-    
-    void Start()
+
+    private void Start()
     {
         //게임 시작시 마우스 커서를 가운데 고정 후 안보이게 설정
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         //이동속도 초기화
         moveSpeed = originSpeed;
+        moveMode = MoveMode.Idle;
     }
 
     private IEnumerator ChangeMoveMode()
     {   
-        if (isChangingMoveMode) yield break; // 이미 실행 중이면 중복 실행 방지
+        if (_isChangingMoveMode) yield break; // 이미 실행 중이면 중복 실행 방지
 
-        isChangingMoveMode = true; // 실행 시작 표시
+        _isChangingMoveMode = true; // 실행 시작 표시
    
         
         if (isStunning)
         {
             moveMode = MoveMode.Slow;
-
-            // for (int i = 0; i < 3; i++)
-            // {
-            //     // Debug.Log(i);
-            //     yield return new WaitForSeconds(0.5f);
-            // }
-            
             yield return new WaitForSeconds(1.5f);
-            
         }
         else
         {
@@ -77,14 +82,15 @@ public class PlayerController : MonoBehaviour
             moveMode = (isRunning ? MoveMode.Running : MoveMode.Move);
         }
         
-        isChangingMoveMode = false;
+        _isChangingMoveMode = false;
         isStunning = false;
-        Debug.Log(moveMode);
     }
-    
-    
-    void Update()
+
+
+    private void Update()
     {
+        if(isDead) return;
+        
         //키보드 방향키 입력정보를 가져옴
         var v = Input.GetAxisRaw("Vertical");
         var h = Input.GetAxisRaw("Horizontal");
@@ -110,14 +116,16 @@ public class PlayerController : MonoBehaviour
 
         // 아무 방향키도 입력받지 않으면 이동하지 않고 종료
         //Mathf.Approximately가 근사치를 뽑아 비교해주는? 메소드이고 =! 를 쓰면 값이 뒤집혀 들어간다
-        bool isidle = (Mathf.Approximately(h, 0f) && Mathf.Approximately(v, 0f));
-        if (isidle)
+        var isIdle = (Mathf.Approximately(h, 0f) && Mathf.Approximately(v, 0f));
+        
+        if (isIdle)
         {
-            bobbingHead.ChangeMode(MoveMode.Idle);
+            moveMode = MoveMode.Idle;
+            bobbingHead.ChangeMode(moveMode);
             return;
         }
         
-        if (!isChangingMoveMode) // 코루틴이 실행 중이 아닐 때만 실행
+        if (!_isChangingMoveMode) // 코루틴이 실행 중이 아닐 때만 실행
         {
             StartCoroutine(ChangeMoveMode());
         }
@@ -127,8 +135,8 @@ public class PlayerController : MonoBehaviour
         bobbingHead.bobbingAmount = bobbingHead.bobbingAmountRun;
         
         //플레이어가 로컬축 기준으로 이동
-        var movedir = new Vector3(h, 0, v).normalized;
-        _controller.Move(transform.rotation * (moveSpeed * Time.deltaTime * movedir));
+        var moveDir = new Vector3(h, 0, v).normalized;
+        _controller.Move(transform.rotation * (moveSpeed * Time.deltaTime * moveDir));
 
     }
 }
