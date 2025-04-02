@@ -84,6 +84,8 @@ public class PlayerAudio : MonoBehaviour
         _currentMoveMode = _player.moveMode;
         SwitchFootstepClip(_currentMoveMode);
         ApplySnapshot(_currentMoveMode);
+
+        // audioMixer.SetFloat("");
     }
     
     private void SwitchFootstepClip(MoveMode mode)
