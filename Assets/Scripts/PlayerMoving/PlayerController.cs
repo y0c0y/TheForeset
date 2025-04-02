@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance { get; private set; }
     
     public bool isStunning;
+    public bool isDead;
+    
     private bool _isChangingMoveMode; // 코루틴 실행 여부 체크
     
     public MoveMode moveMode;
@@ -43,6 +45,9 @@ public class PlayerController : MonoBehaviour
         }
         
         _controller = GetComponent<CharacterController>();
+        
+        isStunning = false;
+        isDead = false;
         
         _isChangingMoveMode = false;
     }
@@ -84,6 +89,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if(isDead) return;
+        
         //키보드 방향키 입력정보를 가져옴
         var v = Input.GetAxisRaw("Vertical");
         var h = Input.GetAxisRaw("Horizontal");

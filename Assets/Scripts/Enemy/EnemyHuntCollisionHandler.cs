@@ -16,7 +16,7 @@ public class EnemyHuntCollisionHandler : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(!Enemy.Instance.IsChasing) return;
+        if(Enemy.Instance.IsHiding) return;
         if (!other.CompareTag("Player")) return;
         Debug.Log("Player Hit");
         _enemy?.OnPlayerHit();

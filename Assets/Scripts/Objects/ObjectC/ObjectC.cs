@@ -57,15 +57,6 @@ public class ObjectC : MonoBehaviour, IObjectCColliderHandler
         bush.SetActive(!hide);
             
         if (!_enemy) return;
-            
-        if (hide)
-        {
-            Debug.Log("Hide in Bush");
-            _enemy.OnIsChasing(false);
-        }
-        else
-        {
-            _enemy.OnIsChasing(true);
-        }
+        _enemy.OnIsHiding(hide);
     }
 }

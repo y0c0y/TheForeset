@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -8,15 +10,18 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
     public static Enemy Instance { get; private set; }
     
     public bool IsWalking { get; private set; } = true;
-    public bool IsChasing { get; private set; } = true;
+    public bool IsHiding { get; private set; } = false; 
 
-    public AudioClip voice;
-    public AudioClip crunch;
+
+    [Header("Audio Clips")]
+    public AudioClip voiceClip;
+    public AudioClip crunchClip;
     private AudioSource _audio;
 
-    [SerializeField] private GameObject player;
-    [SerializeField] private int distance = 10;
-
+    [Header("Chasing")]
+    [SerializeField] private PlayerController player;
+    public float distance;
+    
     private NavMeshAgent _agent;
     private Vector3 _targetPosition;
     private Vector3 _staticPoint;
@@ -38,18 +43,17 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private void Start()
     {
-        _targetPosition = GetRandomPatrolPoint();
-        _agent.SetDestination(_targetPosition);
+        player = PlayerController.Instance;
+        SetNewPatrolPoint();
     }
 
     private void Update()
     {
-        if (!IsChasing && 
+        if (IsHiding && 
             !_agent.pathPending && 
             _agent.remainingDistance <= _agent.stoppingDistance && 
             _agent.velocity.sqrMagnitude == 0f)
         {
-            // Debug.Log("이게 얼마나 호출되는겨");
             SetNewPatrolPoint();
         }
         
@@ -59,14 +63,9 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
     
     private void SetNewPatrolPoint()
     {
-        _staticPoint = GetRandomPatrolPoint();
-        _targetPosition = _staticPoint;
-    }
-    
-    private Vector3 GetRandomPatrolPoint()
-    {
         var randomCircle = Random.insideUnitCircle * distance;
-        return player.transform.position + new Vector3(randomCircle.x, 0, randomCircle.y);
+        _staticPoint =  player.transform.position + new Vector3(randomCircle.x, 0, randomCircle.y);
+        _targetPosition = _staticPoint;
     }
     
     private void RotateTowardsSteeringTarget()
@@ -77,37 +76,49 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
     }
 
-    public void OnIsChasing(bool isChasing)
+    public void OnIsHiding(bool isHiding)
     {
-        IsChasing = isChasing;
-        // Debug.Log(IsChasing);
+        IsHiding = isHiding;
+        Debug.Log(IsHiding);
     }
 
     public void OnPlayerDetected(Collider other)
     {
-        if (IsChasing)
+        if (IsHiding)
         {
-            // 플레이어를 추적
-            _targetPosition = other.transform.position;
+            OnPlayerLost();
         }
         else
         {
-            // 순찰 모드로 복귀
-            SetNewPatrolPoint();
-            _targetPosition = _staticPoint;
+            _targetPosition = other.transform.position;
         }
     }
     
     public void OnPlayerLost()
     {
-        _targetPosition = _staticPoint;
+        SetNewPatrolPoint();
     }
 
     public void OnPlayerHit()
     {
         IsWalking = false;
-        _audio.clip =null;
-        _audio.PlayOneShot(crunch);
+        player.isDead = true;
+        
+        // 플레이어와 거미의 움직임을 정지하고 캔버스를 표시
         GameManager.Instance.GameOver();
+        // 캔버스가 표시된 후 오디오 재생을 위한 코루틴 실행
+        StartCoroutine(PlayCrunchAudio());
     }
+
+    private IEnumerator PlayCrunchAudio()
+    {
+        // Time.timeScale이 0이어도 실제 시간 기준으로 잠시 대기 (예: 0.1초)
+        yield return new WaitForSecondsRealtime(0.1f);
+    
+        _audio.clip = crunchClip;
+        _audio.volume = 1f;
+        _audio.loop = false;
+        _audio.Play();
+    }
+
 }

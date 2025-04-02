@@ -7,14 +7,6 @@ using UnityEngine.Serialization;
 
 public class PlayerAudio : MonoBehaviour
 {
-    
-    [System.Serializable]
-    public struct AudioSettings
-    {
-        public float moveVolumeDB;
-        public float heartbeatVolumeDB;
-    }
-    
     [Header("Audio Source")]
     public AudioSource moveAudio;
     public AudioSource heartbeatAudio;
@@ -27,19 +19,39 @@ public class PlayerAudio : MonoBehaviour
     [Header("Audio Mixer")]
     public AudioMixer audioMixer;
     
-    [SerializeField] private string moveVolumeParam = "MoveVolume";
-    [SerializeField] private string heartbeatVolumeParam = "HeartbeatVolume";
+    [Header("Audio Mixer Snapshot")]
+    public AudioMixerSnapshot idleSnapshot;
+    public AudioMixerSnapshot walkSnapshot;
+    public AudioMixerSnapshot runSnapshot;
+    public AudioMixerSnapshot slowSnapshot;
+    public float transitionTime = 0.5f;
+    
+    // [SerializeField] private string moveVolumeParam = "MoveVolume";
+    // [SerializeField] private string heartbeatVolumeParam = "HeartbeatVolume";
     
     private MoveMode _currentMoveMode;
     private PlayerController _player;
 
-    private readonly Dictionary<MoveMode, AudioSettings> _modeAudioSettings = new Dictionary<MoveMode, AudioSettings>
+    public void ApplySnapshot(MoveMode mode)
     {
-        { MoveMode.Idle, new AudioSettings { moveVolumeDB = -80f, heartbeatVolumeDB = 0f } },
-        { MoveMode.Move, new AudioSettings { moveVolumeDB = 10f, heartbeatVolumeDB = -10f } },
-        { MoveMode.Running, new AudioSettings { moveVolumeDB = 0f, heartbeatVolumeDB = -5f } },
-        { MoveMode.Slow, new AudioSettings { moveVolumeDB = -50f, heartbeatVolumeDB = 0f } },
-    };
+        switch (mode)
+        {
+            case MoveMode.Idle:
+                idleSnapshot.TransitionTo(transitionTime);
+                break;
+            case MoveMode.Move:
+                walkSnapshot.TransitionTo(transitionTime);
+                break;
+            case MoveMode.Running:
+                runSnapshot.TransitionTo(transitionTime);
+                break;
+            case MoveMode.Slow:
+                slowSnapshot.TransitionTo(transitionTime);
+                break;
+            default:
+                break;
+        }
+    }
     
     private void Awake()
     {
@@ -57,15 +69,21 @@ public class PlayerAudio : MonoBehaviour
         }
 
         _currentMoveMode = _player.moveMode;
-        ApplyAudioSettings(_currentMoveMode);
+        ApplySnapshot(_currentMoveMode);
     }
 
     private void Update()
     {
+        if (_player.isDead)
+        {
+            heartbeatAudio.Stop();
+            moveAudio.Stop();
+            // moveAudio.Stop();
+        }
         if (_player.moveMode == _currentMoveMode) return;
         _currentMoveMode = _player.moveMode;
-        ApplyAudioSettings(_currentMoveMode);
         SwitchFootstepClip(_currentMoveMode);
+        ApplySnapshot(_currentMoveMode);
     }
     
     private void SwitchFootstepClip(MoveMode mode)
@@ -89,15 +107,4 @@ public class PlayerAudio : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
         }
     }
-
-    private void ApplyAudioSettings(MoveMode mode)
-    {
-        if (!_modeAudioSettings.TryGetValue(mode, out var settings)) return;
-        audioMixer.SetFloat(moveVolumeParam, settings.moveVolumeDB);
-        audioMixer.SetFloat(heartbeatVolumeParam, settings.heartbeatVolumeDB);
-        
-        // Debug.Log(mode.ToString());
-    }
-    
-   
 }
