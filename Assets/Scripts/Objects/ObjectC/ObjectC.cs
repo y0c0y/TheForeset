@@ -37,8 +37,6 @@ public class ObjectC : MonoBehaviour, IObjectCColliderHandler
     private void ChangeAudio(bool hide)
     {
         var tmpClip = hide ? bushInClip : bushOutClip;
-        var tmpVolume = hide ? 0.2f : 0.2f;
-        bushAudio.volume = tmpVolume;
         bushAudio.PlayOneShot(tmpClip);
     }
         
