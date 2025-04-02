@@ -7,6 +7,13 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 {
     public static Enemy Instance { get; private set; }
     
+    public bool IsWalking { get; private set; } = true;
+    public bool IsChasing { get; private set; } = true;
+
+    public AudioClip voice;
+    public AudioClip crunch;
+    private AudioSource _audio;
+
     [SerializeField] private GameObject player;
     [SerializeField] private int distance = 10;
 
@@ -14,9 +21,6 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
     private Vector3 _targetPosition;
     private Vector3 _staticPoint;
     
-    public bool IsWalking { get; private set; } = true;
-    public bool IsChasing { get; private set; } = true;
-
     private void Awake()
     {
         if (Instance == null)
@@ -28,7 +32,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
             Destroy(gameObject);
             return;
         }
-        
+        _audio = GetComponent<AudioSource>();
         _agent = GetComponent<NavMeshAgent>();
     }
 
@@ -45,7 +49,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
             _agent.remainingDistance <= _agent.stoppingDistance && 
             _agent.velocity.sqrMagnitude == 0f)
         {
-            Debug.Log("이게 얼마나 호출되는겨");
+            // Debug.Log("이게 얼마나 호출되는겨");
             SetNewPatrolPoint();
         }
         
@@ -102,7 +106,8 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
     public void OnPlayerHit()
     {
         IsWalking = false;
+        _audio.clip =null;
+        _audio.PlayOneShot(crunch);
         GameManager.Instance.GameOver();
-        IsWalking = true;
     }
 }

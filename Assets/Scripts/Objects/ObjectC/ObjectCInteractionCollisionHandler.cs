@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class ObjectCInteractionHandler : MonoBehaviour
 {
@@ -11,32 +9,17 @@ public class ObjectCInteractionHandler : MonoBehaviour
     {
         _objectC = GetComponentInParent<IObjectCColliderHandler>();
     }
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         _objectC?.OnPlayerHide();
-    //     }
-    // }
     
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("Player"))
-        {
-            _objectC?.OnPlayerInteraction(other);
-    
-        }
+        if (!other.CompareTag("Player")) return;
+        _objectC?.OnPlayerInteraction(other);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            _objectC?.OnPlayerExitInteraction(other);
-        }
-        
+        if (!other.CompareTag("Player")) return;
+        _objectC?.OnPlayerExitInteraction(other);
     }
 
 }
