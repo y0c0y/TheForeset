@@ -47,7 +47,7 @@ public class StartImage : MonoBehaviour
         CanvasGroup = canvas.GetComponent<CanvasGroup>();
         
         GM = GameObject.Find("StartCan");
-        SP = GameObject.Find("StartSP");
+        SP = GameObject.Find("SpiderForStart");
         
         originalAlpha = CanvasGroup.alpha;
         

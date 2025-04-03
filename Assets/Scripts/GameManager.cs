@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
        
     }
 
+    public static void GameWon()
+    {
+        IsGameOver = true;
+    }
+    
     public static void GameOver()
     {
         Time.timeScale = 0f;
@@ -39,7 +44,7 @@ public class GameManager : MonoBehaviour
     public static void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("yooyScene");
+        SceneManager.LoadScene("Main");
     }
 
     public static void ExitGame()
