@@ -37,7 +37,7 @@ public class EndCan : MonoBehaviour
                 canvasGroup.alpha = 1f;
 
                 talk.Play(
-                    2f,
+                    1f,
                     new[]
                     {
                         "후.. 드디어 집이다..",

@@ -3395,9 +3395,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 543677634260548055, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bdc567d021ebc3a4493d9e52dfb1b2c0, type: 2}
+    - target: {fileID: 543677634260548055, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4888448710859707239, guid: bdc567d021ebc3a4493d9e52dfb1b2c0, type: 2}
+    - target: {fileID: 543677634260548055, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 972462632255068880, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
       propertyPath: blinkSpeed
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615145913239991402, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bdc567d021ebc3a4493d9e52dfb1b2c0, type: 2}
+    - target: {fileID: 1615145913239991402, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4888448710859707239, guid: bdc567d021ebc3a4493d9e52dfb1b2c0, type: 2}
+    - target: {fileID: 1615145913239991402, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2203573323983076378, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3438,6 +3462,14 @@ PrefabInstance:
     - target: {fileID: 2203573323983076378, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702196211954835497, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321985743798059155, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7117965873624503476, guid: 375d5e6df3a8b244a9eaf3fc2a27b8d3, type: 3}
       propertyPath: m_Name
@@ -3805,7 +3837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6987109013651779420}
   m_Layer: 0
-  m_Name: StartSP
+  m_Name: SpiderForStart
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
