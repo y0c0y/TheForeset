@@ -46,8 +46,8 @@ public class StartImage : MonoBehaviour
         
         CanvasGroup = canvas.GetComponent<CanvasGroup>();
         
-        GM = GameObject.Find("GM");
-        SP = GameObject.Find("StartSP");
+        GM = GameObject.Find("StartCan");
+        SP = GameObject.Find("SpiderForStart");
         
         originalAlpha = CanvasGroup.alpha;
         
@@ -85,10 +85,10 @@ public class StartImage : MonoBehaviour
 
         if (hasEnded)
         {
-            talk.Play(1f, new []
+            talk.Play(0.5f, new []
             {
                 "오늘도 거미줄약을 다 나눠줬다..\n진짜 힘들다.. 피곤해..",
-                ".....",
+                // ".....",
                 "어..? 근데 숲이... 이상하네... \n평소랑 분위기가 너무 다른데..",
                 "이상한 소리도 들리고...\n빨리 집에 가야겠어..!!!"
             });
