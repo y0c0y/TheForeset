@@ -20,12 +20,13 @@ public class GGAMBBACK : MonoBehaviour
 
     void Update()
     {
-        blinkSum += blinkSpeed * Time.deltaTime;
+        blinkSum += blinkSpeed * Time.unscaledDeltaTime;
         if (blinkSum >= 360f)
         {
             blinkSum -= 360f;
         }
-        radian += Mathf.Deg2Rad * blinkSum;
+        
+        radian = Mathf.Deg2Rad * blinkSum;
         sin = (Mathf.Sin(radian) + 1) / 2;
         
         canvasGroup.alpha = sin;
