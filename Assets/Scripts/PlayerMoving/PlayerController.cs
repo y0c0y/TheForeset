@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     
     public bool isStunning;
     public bool isDead;
+    public bool isWon;
     
     private bool _isChangingMoveMode; // 코루틴 실행 여부 체크
     
@@ -31,6 +32,12 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
 
     public BobbingHead bobbingHead;
+
+    public bool CanPlay()
+    {
+        //isDead가 True or isWon이 True면 정지
+        return !isDead && !isWon;
+    }
     
     private void Awake()
     {
@@ -48,12 +55,15 @@ public class PlayerController : MonoBehaviour
         
         isStunning = false;
         isDead = false;
+        isWon = false;
         
         _isChangingMoveMode = false;
     }
 
     private void Start()
     {
+        _rotateY = transform.eulerAngles.y;
+        
         //게임 시작시 마우스 커서를 가운데 고정 후 안보이게 설정
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -89,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(isDead) return;
+        if(!CanPlay()) return;
         
         //키보드 방향키 입력정보를 가져옴
         var v = Input.GetAxisRaw("Vertical");

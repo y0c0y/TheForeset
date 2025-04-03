@@ -71,7 +71,7 @@ public class PlayerAudio : MonoBehaviour
 
     private void Update()
     {
-        if (_player.isDead)
+        if (!_player.CanPlay())
         {
             heartbeatAudio.Stop();
             moveAudio.Stop();
