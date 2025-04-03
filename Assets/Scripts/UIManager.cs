@@ -1,26 +1,27 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Canvas")]
+    public GameObject endingCanvas;
     
-    public Canvas EndingCanvas;
-    
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        GameManager.Instance.OnGameOverCanvas += OnGameOverCanvas;
-        
+        GameManager.OnGameOverCanvas += OnGameOverCanvas;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnGameOverCanvas(bool isGameOver)
     {
-        
-    }
-
-    public void OnGameOverCanvas(bool isGameOver)
-    {
-        EndingCanvas.enabled = isGameOver;
+        Debug.Log(isGameOver);
+        if (endingCanvas != null)
+        {
+            endingCanvas.SetActive(isGameOver); 
+        }
+        else
+        {
+            Debug.LogWarning("GameOverCanvas is null or destroyed!");
+        }
+       
     }
 }

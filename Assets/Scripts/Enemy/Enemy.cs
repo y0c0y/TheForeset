@@ -104,15 +104,12 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
         IsWalking = false;
         player.isDead = true;
         
-        // 플레이어와 거미의 움직임을 정지하고 캔버스를 표시
-        GameManager.Instance.GameOver();
-        // 캔버스가 표시된 후 오디오 재생을 위한 코루틴 실행
+        GameManager.GameOver();
         StartCoroutine(PlayCrunchAudio());
     }
 
     private IEnumerator PlayCrunchAudio()
     {
-        // Time.timeScale이 0이어도 실제 시간 기준으로 잠시 대기 (예: 0.1초)
         yield return new WaitForSecondsRealtime(0.1f);
     
         _audio.clip = crunchClip;
