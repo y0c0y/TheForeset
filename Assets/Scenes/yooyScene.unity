@@ -2006,38 +2006,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 576271682298582246, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 576271682298582246, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1199390813374806785, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1199390813374806785, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_Acceleration
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1199390813374806785, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068624386598372159, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: distance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4673276244437087841, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -14.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4673276244437087841, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11
-      objectReference: {fileID: 0}
     - target: {fileID: 6022830138875118537, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2077,18 +2045,6 @@ PrefabInstance:
     - target: {fileID: 6022830138875118537, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7375653820857913058, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_Name
-      value: Middle Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 8844429718053997168, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8844429718053997168, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 22.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
