@@ -1,39 +1,53 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { private set; get; }
-    
-    public event Action<bool> OnGameOverCanvas;
-    
-    public UIManager uiManager;
+    public static event Action<bool> OnGameOverCanvas;
 
-    void Awake()
+    private static bool IsGameOver { get; set; }
+    
+    private void Start()
     {
-        if (Instance == null)
+        IsGameOver = false;
+    }
+
+    private void Update()
+    {
+        if (IsGameOver)
         {
-            Instance = this;
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RestartGame();
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                ExitGame();
+            }
         }
+       
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static void GameOver()
     {
-        //uiManager.OnGameOverCanvas();
-        OnGameOverCanvas?.Invoke(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void GameOver()
-    {
-        Debug.Log("Game Over");
         Time.timeScale = 0f;
-        OnGameOverCanvas?.Invoke(true);
+        IsGameOver = true;
+        OnGameOverCanvas?.Invoke(IsGameOver);
+    }
+
+    public static void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("yooyScene");
+    }
+
+    public static void ExitGame()
+    {
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

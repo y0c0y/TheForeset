@@ -3,32 +3,33 @@ using UnityEngine;
 
 public class ObjectD : MonoBehaviour
 {
-    public GameObject player;
+    private AudioSource _audioSource;
     
-    public AudioSource audioSource;
-    public AudioClip audioClip;
-    
-    private bool _hasPlayed;
-    
+    private PlayerController _player;
+
     private void Awake()
     {
-        _hasPlayed = true;
+        _audioSource = GetComponent<AudioSource>();
     }
-    private void Update()
+    private void Start()
     {
-        if (_hasPlayed) return;
-        audioSource.PlayOneShot(audioClip);
-        _hasPlayed = true;
-
+        _player = PlayerController.Instance;
+        if (_player == null)
+        {
+            Debug.LogError("플레이어 싱글톤이 초기화되지 않았습니다!");
+        }
+        
+        _audioSource.Stop();
     }
+    
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        if (player == null) return;
+        if (_player == null) return;
         
-        player.GetComponent<PlayerController>().Instance.isStunning = true;
-        _hasPlayed = false;
-        Destroy(gameObject);
+        _player.isStunning = true;
+        _audioSource.Play();
+        Destroy(gameObject, _audioSource.clip.length);
     }
 }
