@@ -7,7 +7,7 @@ public class EndCan : MonoBehaviour
     public CanvasGroup canvasGroup;
     public CanvasGroup endText;
     private bool isFading;
-    private bool startEndText = false;
+    private bool startEndText;
     public float fadeSpeed = 0.5f;
 
 
@@ -23,6 +23,7 @@ public class EndCan : MonoBehaviour
     {
         canvasGroup.alpha = 0f;
         endText.alpha = 0f;
+        startEndText = false;
     }
 
     void Update()
