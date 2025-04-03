@@ -29,6 +29,7 @@ public class Talk : MonoBehaviour
         timer = time;
         text = texts;
 
+        i = 0;
 
         isEnd = true;
         fadein = false;
