@@ -6,7 +6,7 @@ public class Talk : MonoBehaviour
 {
     public TextMeshProUGUI displayText;
     public CanvasGroup canvasGroup;
-    public float fadeSpeed = 0.5f;
+    public float fadeSpeed = 1f;
     private int i = 0;
     private float t;
     private float timeScale = 1f;
@@ -17,7 +17,8 @@ public class Talk : MonoBehaviour
     private bool fadein = false;
     private bool textPlay = false;
     private bool fadeout = false;
-
+    private bool textSkip = false;
+    
     private bool isEnd;
 
     public bool IsAllEnd { get; private set; }
@@ -34,11 +35,22 @@ public class Talk : MonoBehaviour
         textPlay = false;
         fadeout = false;
         IsAllEnd = false;
+        textSkip = false;
     }
 
 
     void Update()
     {
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     textSkip = true;
+        // }
+        //
+        // if (textSkip)
+        // { 
+        //     TextSkipProcess();
+        // }
+        
         if (isEnd)
         {
             TextSetProcess();
@@ -59,6 +71,21 @@ public class Talk : MonoBehaviour
             FadeOutProcess();
         }
     }
+
+
+    // private void TextSkipProcess()
+    // {
+    //     canvasGroup.alpha -= fadeSpeed * Time.unscaledDeltaTime;
+    //
+    //     if (canvasGroup.alpha <= 0f)
+    //     {
+    //         canvasGroup.alpha = 0f;
+    //         
+    //         isEnd = false;
+    //         
+    //
+    //     }
+    // }
 
     private void TextSetProcess()
     {
@@ -108,7 +135,6 @@ public class Talk : MonoBehaviour
             i++;
             isEnd = true;
             fadeout = false;
-            
         }
     }
 }
