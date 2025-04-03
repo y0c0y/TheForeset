@@ -26,9 +26,6 @@ public class PlayerAudio : MonoBehaviour
     public AudioMixerSnapshot slowSnapshot;
     public float transitionTime = 0.5f;
     
-    // [SerializeField] private string moveVolumeParam = "MoveVolume";
-    // [SerializeField] private string heartbeatVolumeParam = "HeartbeatVolume";
-    
     private MoveMode _currentMoveMode;
     private PlayerController _player;
 
@@ -78,7 +75,6 @@ public class PlayerAudio : MonoBehaviour
         {
             heartbeatAudio.Stop();
             moveAudio.Stop();
-            // moveAudio.Stop();
         }
         if (_player.moveMode == _currentMoveMode) return;
         _currentMoveMode = _player.moveMode;
