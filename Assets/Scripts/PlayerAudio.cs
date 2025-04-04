@@ -99,6 +99,7 @@ public class PlayerAudio : MonoBehaviour
                 moveAudio.Stop();
                 break;
             case MoveMode.Slow:
+            case MoveMode.Talk:
             case MoveMode.Move:
                 moveAudio.clip = walkClip;
                 if (!moveAudio.isPlaying) moveAudio.Play();

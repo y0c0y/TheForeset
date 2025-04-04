@@ -115,8 +115,9 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private IEnumerator PlayCrunchAudio()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return new WaitForSecondsRealtime(0.5f);
         
+        if(_audio.isPlaying) _audio.Stop();
         _audio.clip = crunchClip;
         _audio.volume = 1f;
         _audio.loop = false;
