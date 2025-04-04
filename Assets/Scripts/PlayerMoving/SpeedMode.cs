@@ -6,6 +6,8 @@ public static class SpeedMode
     private const float SlowSpeed = 0.5f;
     //기본속도배율
     private const float NormalSpeed = 1.0f;
+    //말할때속도배율
+    private const float TalkSpeed = 0.9f;
     
     //속도를 바꿔주는 메소드
     public static float ChangeSpeed(MoveMode mode)
@@ -18,7 +20,11 @@ public static class SpeedMode
         {
             return SlowSpeed;
         }
-        else
+        else if (mode == MoveMode.Talk)
+        {
+            return TalkSpeed;
+        }
+        else 
         {
             return NormalSpeed;
         }

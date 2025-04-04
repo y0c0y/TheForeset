@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
         if (!talk.IsAllEnd)
         {
-            moveMode = MoveMode.Slow;
+            moveMode = MoveMode.Talk;
         }
         else
         {
