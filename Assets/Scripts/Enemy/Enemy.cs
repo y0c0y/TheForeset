@@ -49,6 +49,9 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
 
     private void Update()
     {
+        _agent.SetDestination(_targetPosition);
+        RotateTowardsSteeringTarget();
+        
         if (IsHiding && 
             !_agent.pathPending && 
             _agent.remainingDistance <= _agent.stoppingDistance && 
@@ -57,8 +60,7 @@ public class Enemy : MonoBehaviour, IEnemyCollisionHandler
             SetNewPatrolPoint();
         }
         
-        _agent.SetDestination(_targetPosition);
-        RotateTowardsSteeringTarget();
+        
     }
     
     private void SetNewPatrolPoint()
