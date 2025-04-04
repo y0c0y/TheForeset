@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     //리지드바디 대신 캐릭터컨트롤러로 움직일 예정
     private CharacterController _controller;
 
+    public Talk talk;
+
     public BobbingHead bobbingHead;
 
     public bool CanPlay()
@@ -124,22 +126,28 @@ public class PlayerController : MonoBehaviour
         //카메라 회전 제한
         _rotateX = Mathf.Clamp(_rotateX, -40f, 20f);
 
-        // 아무 방향키도 입력받지 않으면 이동하지 않고 종료
-        //Mathf.Approximately가 근사치를 뽑아 비교해주는? 메소드이고 =! 를 쓰면 값이 뒤집혀 들어간다
-        var isIdle = (Mathf.Approximately(h, 0f) && Mathf.Approximately(v, 0f));
-        
-        if (isIdle)
+        if (!talk.IsAllEnd)
         {
-            moveMode = MoveMode.Idle;
-            bobbingHead.ChangeMode(moveMode);
-            return;
+            moveMode = MoveMode.Slow;
         }
-        
-        if (!_isChangingMoveMode) // 코루틴이 실행 중이 아닐 때만 실행
+        else
         {
-            StartCoroutine(ChangeMoveMode());
+            // 아무 방향키도 입력받지 않으면 이동하지 않고 종료
+            //Mathf.Approximately가 근사치를 뽑아 비교해주는? 메소드이고 =! 를 쓰면 값이 뒤집혀 들어간다
+            var isIdle = (Mathf.Approximately(h, 0f) && Mathf.Approximately(v, 0f));
+            if (isIdle)
+            {
+                moveMode = MoveMode.Idle;
+                bobbingHead.ChangeMode(moveMode);
+                return;
+            }
+
+            if (!_isChangingMoveMode) // 코루틴이 실행 중이 아닐 때만 실행
+            {
+                StartCoroutine(ChangeMoveMode());
+            }
         }
-        
+
         moveSpeed = originSpeed * SpeedMode.ChangeSpeed(moveMode);
         bobbingHead.ChangeMode(moveMode);
         bobbingHead.bobbingAmount = bobbingHead.bobbingAmountRun;
