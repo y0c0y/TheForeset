@@ -960,6 +960,10 @@ PrefabInstance:
       propertyPath: distance
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5409236482251107946, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ec021f4f8fd2cd419879f8b30333ab7, type: 2}
     - target: {fileID: 6022830138875118537, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.277
@@ -1000,7 +1004,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5409236482251107946, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2195979528776741576, guid: 589b86a7c9a111443bd55c909566ff4f, type: 3}
     m_AddedGameObjects:
@@ -1395,7 +1400,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1169235658
 GameObject:
@@ -4763,6 +4768,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1783666255}
+    - target: {fileID: 4407236314600187617, guid: 963943a7f852d07449c5182430b75347, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407236314600187617, guid: 963943a7f852d07449c5182430b75347, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.892
+      objectReference: {fileID: 0}
     - target: {fileID: 6402757917941245688, guid: 963943a7f852d07449c5182430b75347, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2947204
@@ -4837,7 +4850,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 988176361796506334, guid: 963943a7f852d07449c5182430b75347, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7702669987199158745, guid: 963943a7f852d07449c5182430b75347, type: 3}
+    - {fileID: 6569089974801718024, guid: 963943a7f852d07449c5182430b75347, type: 3}
+    - {fileID: 6326699320651197956, guid: 963943a7f852d07449c5182430b75347, type: 3}
+    - {fileID: 4023552151181247485, guid: 963943a7f852d07449c5182430b75347, type: 3}
+    - {fileID: 8504993252636900950, guid: 963943a7f852d07449c5182430b75347, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963943a7f852d07449c5182430b75347, type: 3}
