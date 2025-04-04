@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -26,6 +27,8 @@ public class PlayerAudio : MonoBehaviour
     public AudioMixerSnapshot slowSnapshot;
     public float transitionTime = 0.5f;
     
+    
+    public static PlayerAudio Instance { get; private set; }
     private MoveMode _currentMoveMode;
     private PlayerController _player;
 
@@ -56,6 +59,11 @@ public class PlayerAudio : MonoBehaviour
         {
             Debug.LogError("오디오 소스나 AudioMixer 참조가 누락되었습니다!");
         }
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        
     }
     private void Start()
     {
@@ -103,4 +111,5 @@ public class PlayerAudio : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
         }
     }
+    
 }
