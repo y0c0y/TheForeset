@@ -6,7 +6,7 @@
 개발팀: 13팀 <br/>
 개발기간: 2025. 03. 11. ~ 2025. 04. 03.  
 
-[개발 문서](https://www.notion.so/13-1b98815a65f380fdad6cdc74b9279414?pvs=4)
+[개발 문서](https://familiar-witness-f89.notion.site/The-Forest-1ce01cd86de480c8b829e7887e04089f)
 
 ## 내용 
 
