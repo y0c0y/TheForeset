@@ -3,7 +3,7 @@
 [다운링크]([https://drive.google.com/drive/folders/10XJfwuT1aWuo-5Qv5x-5aak9ZRfT0S_n?usp=drive_link])
 
 ## 개발 정보  
-개발팀: 13팀 
+개발팀: 13팀 <br/>
 개발기간: 2025. 03. 11. ~ 2025. 04. 03.  
 
 ## 기획 의도 
