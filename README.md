@@ -78,4 +78,4 @@
 ## 프로젝트 발표 동영상
 
 
-[발표 링크](https://www.youtube.com/watch?v=m1-Dvv6IBGY)
+[발표 링크]
