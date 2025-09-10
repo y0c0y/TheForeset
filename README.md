@@ -75,7 +75,10 @@
 - [최서영](https://github.com/ashley060207): Player 이동/속도, 맵 제작, UI, Post Processing, Bobbing Head, 텍스트 처리  
 
 
-## 프로젝트 발표 동영상
+## 프로젝트 발표 자료 일부
+<img width="2647" height="1481" alt="image" src="https://github.com/user-attachments/assets/7dbeda83-9b1e-4eee-8a29-63f2adb52d4b" />
+
+<img width="2649" height="1489" alt="image" src="https://github.com/user-attachments/assets/affee790-5db5-4bba-81cd-7c0f5839c034" />
 
 
 [발표 링크]
